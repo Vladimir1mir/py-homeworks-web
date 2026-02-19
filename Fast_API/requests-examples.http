@@ -1,0 +1,70 @@
+@baseUrl = http://localhost:8000/api/v1
+
+# создание пользователя (пока что без прав)
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "name": "user_12@mail.ru",
+  "password": "vERy_l00ngPassword"
+}
+
+###
+
+# получение информации о пользователе
+GET {{baseUrl}}/user/1
+Content-Type: application/json
+
+###
+
+# обновление пользователя
+PATCH {{baseUrl}}/user/1
+Content-Type: application/json
+
+{
+  "name": "user_2@mail.ru",
+  "password": "vERy_l00ngPassword"
+}
+
+###
+
+# удаление пользователя
+DELETE {{baseUrl}}/user/1
+Content-Type: application/json
+
+###
+
+# создание объявления
+POST {{baseUrl}}/advertisement
+Content-Type: application/json
+
+{
+  "title": "stadaring",
+  "description": "stdadring",
+  "price": 0,
+  "author_id": 1
+}
+
+###
+
+# получение информации по объявлению
+GET {{baseUrl}}/advertisement/1
+Content-Type: application/json
+
+###
+
+# обновление объявления
+PATCH {{baseUrl}}/advertisement/1
+Content-Type: application/json
+
+{
+  "description": "iPhone X, brand-new, some scratches"
+}
+
+###
+
+# удаление объявления
+DELETE {{baseUrl}}/advertisement/1
+Content-Type: application/json
+
+###
